@@ -3,12 +3,17 @@ package conta;
 import java.util.Scanner;
 import conta.util.Cores;
 import conta.model.Conta;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
 
 public class Menu 
 {
 	public static void main(String[] args) 
 	{
-		// Teste
+		Scanner leia = new Scanner(System.in);
+		int opcao;
+		
+		// Teste da Classe Conta
 		Conta c1 = new Conta(1, 123, 1, "Adriana", 10000.0f);
 		c1.visualizar();
 		c1.sacar(12000.0f);
@@ -16,31 +21,44 @@ public class Menu
 		c1.depositar(5000.0f);
 		c1.visualizar();
 		
-		Scanner leia = new Scanner(System.in);
-		int opcao;
+		// Teste da Classe Conta Corrente
+		ContaCorrente cc1 = new ContaCorrente(2, 431, 1, "Marina", 15000.0f, 1000.0f);
+		cc1.visualizar();
+		cc1.sacar(12000.0f);
+		cc1.visualizar();
+		cc1.depositar(5000.0f);
+		cc1.visualizar();
+				
+		// Teste da Classe Conta Poupança
+		ContaPoupanca cp1 = new ContaPoupanca(3, 326, 2, "João Claudino", 100000.0f, 15);
+		cp1.visualizar();
+		cp1.sacar(1000.0f);
+		cp1.visualizar();
+		cp1.depositar(5000.0f);
+		cp1.visualizar();
 
 		while (true) 
 		{
 			System.out.println(Cores.TEXT_LIGHT_BLUE + Cores.ANSI_BLACK_BACKGROUND
 					+ "****************************************************");
-			System.out.println("													");
-			System.out.println("					BANCO DE SAMPA					");
-			System.out.println("													");
+			System.out.println("                                                    ");
+			System.out.println("                   BANCO DE SAMPA                   ");
+			System.out.println("                                                    ");
 			System.out.println("****************************************************");
-			System.out.println("													");
-			System.out.println("			1 - Criar Conta							");
-			System.out.println("			2 - Listar todas as Contas				");
-			System.out.println("			3 - Buscar Conta por Numero				");
-			System.out.println("			4 - Atualizar Dados da Conta			");
-			System.out.println("			5 - Apagar Conta						");
-			System.out.println("			6 - Sacar								");
-			System.out.println("			7 - Depositar							");
-			System.out.println("			8 - Transferir valores entre Contas     ");
-			System.out.println("			9 - Sair								");
-			System.out.println("													");
+			System.out.println("                                                    ");
+			System.out.println("            1 - Criar Conta                         ");
+			System.out.println("            2 - Listar todas as Contas              ");
+			System.out.println("            3 - Buscar Conta por Numero             ");
+			System.out.println("            4 - Atualizar Dados da Conta            ");
+			System.out.println("            5 - Apagar Conta                        ");
+			System.out.println("            6 - Sacar                               ");
+			System.out.println("            7 - Depositar                           ");
+			System.out.println("            8 - Transferir valores entre Contas     ");
+			System.out.println("            9 - Sair                                ");
+			System.out.println("                                                    ");
 			System.out.println("****************************************************");
-			System.out.println("Entre com a opção desejada:							");
-			System.out.println("													" + Cores.TEXT_RESET);
+			System.out.println("Entre com a opção desejada:                         ");
+			System.out.println("                                                    " + Cores.TEXT_RESET);
 
 			opcao = leia.nextInt();
 
@@ -89,7 +107,7 @@ public class Menu
 	{
 			System.out.println("\n**************************************************");
 			System.out.println("Projeto Desenvolvido por: Sabrina S. Lima			");
-			System.out.println("Gerenation Brasil - sabrinal@genstudents.org		");
+			System.out.println("Generation Brasil - sabrinal@genstudents.org		");
 			System.out.println("https://github.com/sabrinasanmi/contabancaria		");
 			System.out.println("\n**************************************************");
 	}
